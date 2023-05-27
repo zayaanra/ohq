@@ -1,13 +1,10 @@
 CC := gcc
 CFLAGS := -g -O -Wall -Werror -std=c99
 
-CMDDIR := commands
 CMDS := cat
 
-all: cat
-
-cat: $(CMDDIR)/cat/main.c
-	$(CC) -o cat $(CMDDIR)/cat/main.c $(CFLAGS)
+cat: cat.c
+	$(CC) cat.c -o cat $(CFLAGS)
 
 .PHONY: clean
 clean:
