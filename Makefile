@@ -2,7 +2,7 @@ CC := gcc
 CFLAGS := -g -O -Wall -Werror -std=c99
 
 
-CMDS := cat echo
+CMDS := cat echo rm
 
 all: $(CMDS)
 
@@ -11,6 +11,9 @@ cat: cat.c
 
 echo: echo.c
 	$(CC) echo.c -o echo $(CFLAGS)
+
+rm: rm.c
+	$(CC) rm.c -o rm $(CFLAGS)
 
 .PHONY: clean
 clean:
