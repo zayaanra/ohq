@@ -9,13 +9,14 @@ void w_stdout(char *filename) {
   FILE *fp;
   fp = fopen(filename, "r");
   if (fp == NULL) {
-    fprintf(stderr, "error processing file: %s", filename);
+    fprintf(stderr, "cat: %s: No such file or directory\n", filename);
   } else {
     // Process file until EOF
     int ch;
     while ((ch = getc(fp)) != EOF) {
       putchar(ch);
     }
+    fclose(fp);
   }
 }
 
